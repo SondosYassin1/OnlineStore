@@ -1,0 +1,164 @@
+﻿@{
+    var indexHomePage = ViewContext.RouteData.Values["Action"].ToString() == "Index" &&
+            ViewContext.RouteData.Values["Controller"].ToString() == "Home";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - MyStore</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="~/css/site.css" rel="stylesheet" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link @(indexHomePage ? "active" : "") asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        @* @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "") *@
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index" asp-route-category="electronics">Electronics</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index" asp-route-category="clothing">Clothing</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index" asp-route-category="home">Home & Kitchen</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index">All Products</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action"="About">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        
+                    </li>
+                </ul>
+
+                <!-- Search Form -->
+                <form class="d-flex me-2" asp-area="" asp-controller="Products" asp-action="Search" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+                <!-- User Account and Cart -->
+                <div class="d-flex">
+                    <div class="dropdown me-3">
+                        <a href="#" class="nav-link" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <!-- This section would change if logged in/out -->
+                        <partial name="_LoginPartial" />
+                     
+                    </div>
+                    <a asp-area="" asp-controller="Home" asp-action="cart" class="nav-link cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge bg-danger rounded-circle cart-badge">
+@*                             @await Component.InvokeAsync("CartItemCount")
+ *@                            </span>
+                    </a>
+
+                    @*  Check to logout  *@
+@* 
+                    <ul class="navbar-nav">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <span class="nav-link text-dark">Hello @User.Identity.Name!</span>
+                            </li>
+                            <li class="nav-item">
+                                <form class="form-inline" asp-controller="Account" asp-action="Logout">
+                                    <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                        } *@
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area - This would be replaced by page-specific content -->
+    <main class="container my-4">
+        <!-- Page content would go here -->
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>MyStore</h5>
+                    <p>Your one-stop shop for the best products at great prices.</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Shop</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="Index" asp-route-category="new" class="nav-link p-0 text-muted">New Arrivals</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="Index" asp-route-category="bestsellers" class="nav-link p-0 text-muted">Best Sellers</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="Index" asp-route-category="deals" class="nav-link p-0 text-muted">Deals</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Support</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="contact" class="nav-link p-0 text-muted">Contact Us</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="faq" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="shipping" class="nav-link p-0 text-muted">Shipping</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="returns" class="nav-link p-0 text-muted">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Stay Updated</h5>
+                    <p>Subscribe to our newsletter for the latest products and deals.</p>
+                    <div class="d-flex w-100 gap-2">
+                        <input id="newsletter" type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>&copy; @DateTime.Now.Year MyStore, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

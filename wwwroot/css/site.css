@@ -1,0 +1,36 @@
+.footer {
+    background-color: #f8f9fa;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.hero-section {
+    padding: 3rem 0;
+    background-color: #f1f8ff;
+}
+
+.product-card {
+    transition: transform 0.3s;
+    margin-bottom: 1.5rem;
+}
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 0.7rem;
+}

@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+ 
+<div class="dropdown me-3">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <a href="javascript:void(0)" class="nav-link" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user"></i> @UserManager.GetUserName(User)
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" asp-controller="Account" asp-action="Manage">My Account</a></li>
+            <li><a class="dropdown-item" asp-controller="Order" asp-action="History">My Orders</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <form class="form-inline" asp-controller="Account" asp-action="Logout" method="post">
+                    <button type="submit" class="dropdown-item">Logout</button>
+                </form>
+            </li>
+        </ul>
+        }
+    else
+    {
+        <a href="#" class="nav-link" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user"></i> @UserManager.GetUserName(User)
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" asp-controller="Account" asp-action="Login">Sign In</a></li>
+            <li><a class="dropdown-item" asp-controller="Account" asp-action="Register">Register</a></li>
+        </ul>
+
+    }
+</div>
