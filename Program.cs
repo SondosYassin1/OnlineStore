@@ -12,7 +12,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 { //It tells EF Core how to connect to the database and which database provider to use.
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection"));
+
 });
+
+//// means the place that it's stor data in memory (make storege)
+//builder.Services.AddDbContext<ApplicationDbContext>(
+//options => options.UseInMemoryDatabase("TemproraryDb"));
+
+//// The data of the user stor it in the ApplicationDbContext
+//builder.Services.AddDefaultIdentity<IdentityUser>()
+//    .AddEntityFrameworkStores < ApplicationDbContext >
+
 
 
 //Identity Middleware: function use when the server reserved requests

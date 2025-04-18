@@ -71,9 +71,11 @@
                     <a asp-area="" asp-controller="Home" asp-action="cart" class="nav-link cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="badge bg-danger rounded-circle cart-badge">
-@*                             @await Component.InvokeAsync("CartItemCount")
- *@                            </span>
+                          @await Component.InvokeAsync("CartItemCount")
+                        </span>
                     </a>
+
+
 
                     @*  Check to logout  *@
 @* 
