@@ -1,0 +1,44 @@
+﻿@using OnlineStore.Models.Home
+@model IEnumerable<CarouselItemViewModel>
+
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        @for(int i = 0; i < Model.Count(); i++)
+        {
+            <button type="button"
+            data-bs-target="#mainCarousel"
+            data-bs-slide-to="@i" 
+            class="@(i == 0 ? "active" : "")" 
+            @( i == 0 ? "aria-current=\"true\"":"" )
+            aria-label="Slide @(i+1)"></button>
+        }
+       
+
+    </div>
+
+    <div class="carousel-inner">
+       @foreach (var item in Model)
+         {
+           <div class="carousel-item @(item.IsActive ? "active":"")">
+           <img src="@item.ImageUrl" class="d-block w-100" alt="@item.Title">
+               <div class="carousel-caption d-none d-md-block">
+                    <h2>@item.Title</h2>
+                    <p>@item.SubTitle</p>
+                    <a asp-controller="Products" asp-action="Index" asp-route-category="sale" class="btn btn-primary">@item.ButtonText</a>
+               </div>
+           </div>
+         }
+
+       
+    </div>
+
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link @(indexHomePage ? "active" : "") asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link @(indexHomePage ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         @* @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "") *@
                     </li>
                     <li class="nav-item dropdown">
@@ -59,12 +59,7 @@
                 </form>
 
                 <!-- User Account and Cart -->
-                <div class="d-flex">
-                    <div class="dropdown me-3">
-                        <a href="#" class="nav-link" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <!-- This section would change if logged in/out -->
+                
                         <partial name="_LoginPartial" />
                      
                     </div>
@@ -100,11 +95,11 @@
                                 <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
                             </li>
                         } *@
-                    </ul>
+                  @*   </ul> *@
 
 
-                </div>
-            </div>
+       @*          </div>
+            </div> *@
         </div>
     </nav>
 

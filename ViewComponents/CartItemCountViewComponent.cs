@@ -6,7 +6,7 @@ namespace OnlineStore.ViewComponents
     {
         public CartItemCountViewComponent() { }
          
-        public Task<IViewComponentResult> InvokeAsynce()
+        public Task<IViewComponentResult> InvokeAsync()
         {
             int cartItemCount = 0;
             return Task.FromResult<IViewComponentResult>(

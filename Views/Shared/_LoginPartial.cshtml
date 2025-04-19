@@ -1,8 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
- 
 <div class="dropdown me-3">
     @if (SignInManager.IsSignedIn(User))
     {
@@ -19,11 +18,11 @@
                 </form>
             </li>
         </ul>
-        }
+    }
     else
     {
         <a href="#" class="nav-link" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-user"></i> @UserManager.GetUserName(User)
+            <i class="fas fa-user"></i>
         </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
             <li><a class="dropdown-item" asp-controller="Account" asp-action="Login">Sign In</a></li>

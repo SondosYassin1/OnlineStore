@@ -13,6 +13,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection"));
 
+
+
+ 
 });
 
 //// means the place that it's stor data in memory (make storege)
@@ -20,8 +23,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //options => options.UseInMemoryDatabase("TemproraryDb"));
 
 //// The data of the user stor it in the ApplicationDbContext
-//builder.Services.AddDefaultIdentity<IdentityUser>()
-//    .AddEntityFrameworkStores < ApplicationDbContext >
+//builder.Services.AddDefaultIdentity<ApplicationUser>()
+//           .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 
@@ -29,10 +32,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
     options.SignIn.RequireConfirmedEmail = true;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequireNonAlphanumeric = true; //Arabic,special character
-    options.Password.RequiredLength = 8;
+options.Password.RequireLowercase = true;
+options.Password.RequireUppercase = true;
+options.Password.RequireNonAlphanumeric = true; //Arabic,special character
+options.Password.RequiredLength = 8;
 }).AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
 
