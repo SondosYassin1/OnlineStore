@@ -44,7 +44,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action"="About">About Us</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
@@ -71,7 +71,7 @@
                     <a asp-area="" asp-controller="Home" asp-action="cart" class="nav-link cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="badge bg-danger rounded-circle cart-badge">
-                          @await Component.InvokeAsync("CartItemCount")
+                        @await Component.InvokeAsync("CartItemCount")
                         </span>
                     </a>
 
