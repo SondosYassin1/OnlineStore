@@ -2,88 +2,8 @@
 @model HomeViewModel
 <!-- pass data to partial -->
 <partial name="_CarouselPartialView" model="Model.CarouselItems"/>
-
+<partial name="_FeaturedProductsPartial" model="Model.FeaturedProducts" />
 <partial name="_SpecialOffersPartial" model="Model.SpecialOffer" />
-
-
-    <!-- Updated Featured Products section -->
-    <section class="container my-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Featured Products</h2>
-        <a asp-controller="Products" asp-action="Index" class="btn btn-outline-primary">View All</a>
-    </div>
-    <div class="row">
-        <!-- Product 1 -->
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="https://placehold.co/300x300/f8f9fa/0d6efd?text=Wireless+Headphones" class="card-img-top" alt="Wireless Headphones">
-                <div class="card-body">
-                    <h5 class="card-title">Wireless Headphones</h5>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="text-danger fw-bold">$89.99</span>
-                        <span class="text-decoration-line-through text-muted">$129.99</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <a asp-controller="Products" asp-action="Details" asp-route-id="1" class="btn btn-sm btn-outline-primary">View Details</a>
-                        <button class="btn btn-sm btn-primary">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Product 2 -->
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="https://placehold.co/300x300/f8f9fa/0d6efd?text=Smart+Watch" class="card-img-top" alt="Smart Watch">
-                <div class="card-body">
-                    <h5 class="card-title">Smart Watch</h5>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="text-danger fw-bold">$199.99</span>
-                        <span class="text-decoration-line-through text-muted">$249.99</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <a asp-controller="Products" asp-action="Details" asp-route-id="2" class="btn btn-sm btn-outline-primary">View Details</a>
-                        <button class="btn btn-sm btn-primary">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Product 3 -->
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="https://placehold.co/300x300/f8f9fa/0d6efd?text=Casual+T-Shirt" class="card-img-top" alt="Casual T-Shirt">
-                <div class="card-body">
-                    <h5 class="card-title">Casual T-Shirt</h5>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="text-danger fw-bold">$24.99</span>
-                        <span class="text-decoration-line-through text-muted">$34.99</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <a asp-controller="Products" asp-action="Details" asp-route-id="3" class="btn btn-sm btn-outline-primary">View Details</a>
-                        <button class="btn btn-sm btn-primary">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Product 4 -->
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="https://placehold.co/300x300/f8f9fa/0d6efd?text=Coffee+Maker" class="card-img-top" alt="Coffee Maker">
-                <div class="card-body">
-                    <h5 class="card-title">Coffee Maker</h5>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="text-danger fw-bold">$59.99</span>
-                        <span class="text-decoration-line-through text-muted">$79.99</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <a asp-controller="Products" asp-action="Details" asp-route-id="4" class="btn btn-sm btn-outline-primary">View Details</a>
-                        <button class="btn btn-sm btn-primary">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
 
     <!-- Updated Testimonials -->
     <section class="container my-5">
@@ -189,84 +109,8 @@
     </div>
     </section>
 
-    <!-- Updated Featured Products -->
-    <section class="container my-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Featured Products</h2>
-        <a asp-controller="Products" asp-action="Index" class="btn btn-outline-primary">View All</a>
-    </div>
-    <div class="row">
-        <!-- Product 1 -->
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="https://placehold.co/300x300/f0f0f0/333333?text=Headphones" class="card-img-top" alt="Wireless Headphones">
-                <div class="card-body">
-                    <h5 class="card-title">Premium Headphones</h5>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="text-danger fw-bold">$79.99</span>
-                        <span class="text-decoration-line-through text-muted">$129.99</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <a asp-controller="Products" asp-action="Details" asp-route-id="1" class="btn btn-sm btn-outline-primary">View Details</a>
-                        <button class="btn btn-sm btn-primary">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Product 2 -->
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="https://placehold.co/300x300/f0f0f0/333333?text=Smartwatch" class="card-img-top" alt="Smart Watch">
-                <div class="card-body">
-                    <h5 class="card-title">Fitness Smartwatch</h5>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="text-danger fw-bold">$189.99</span>
-                        <span class="text-decoration-line-through text-muted">$249.99</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <a asp-controller="Products" asp-action="Details" asp-route-id="2" class="btn btn-sm btn-outline-primary">View Details</a>
-                        <button class="btn btn-sm btn-primary">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Product 3 -->
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="https://placehold.co/300x300/f0f0f0/333333?text=T-Shirt" class="card-img-top" alt="Designer T-Shirt">
-                <div class="card-body">
-                    <h5 class="card-title">Designer T-Shirt</h5>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="text-danger fw-bold">$29.99</span>
-                        <span class="text-decoration-line-through text-muted">$39.99</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <a asp-controller="Products" asp-action="Details" asp-route-id="3" class="btn btn-sm btn-outline-primary">View Details</a>
-                        <button class="btn btn-sm btn-primary">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Product 4 -->
-        <div class="col-md-3">
-            <div class="card product-card">
-                <img src="https://placehold.co/300x300/f0f0f0/333333?text=Coffee+Maker" class="card-img-top" alt="Coffee Maker">
-                <div class="card-body">
-                    <h5 class="card-title">Smart Coffee Maker</h5>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="text-danger fw-bold">$69.99</span>
-                        <span class="text-decoration-line-through text-muted">$89.99</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <a asp-controller="Products" asp-action="Details" asp-route-id="4" class="btn btn-sm btn-outline-primary">View Details</a>
-                        <button class="btn btn-sm btn-primary">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
+<partial name="_FeaturedProductsPartial" model="Model.NewArrivals" view-data='new ViewDataDictionary(ViewData)
+{{"Title","New Arrivals"}}' />
 
     <!-- Call to Action -->
     <section class="container my-5">
@@ -276,8 +120,6 @@
         <a href="products.html" class="btn btn-primary btn-lg">Shop Now</a>
     </div>
     </section>
-
-
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
