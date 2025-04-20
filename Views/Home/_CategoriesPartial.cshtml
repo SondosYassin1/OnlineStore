@@ -1,0 +1,22 @@
+﻿@using OnlineStore.Models.Home
+@model IEnumerable<CategoryViewModel>
+<!-- Featured Categories -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">Shop by Category</h2>
+    <div class="row">
+        @foreach (var Category in Model)
+        {
+            <div class="col-md-4">
+                <a href="products.html?category=electronics" class="text-decoration-none text-dark">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="@Category.IconClass"></i>
+                        </div>
+                        <h3>@Category.Name</h3>
+                        <p>@Category.Description</p>
+                    </div>
+                </a>
+            </div>
+        }        
+    </div>
+</section>

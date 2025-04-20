@@ -1,0 +1,10 @@
+﻿@using OnlineStore.Models.Home
+@model CallToActionViewModel
+  <!-- Call to Action -->
+<section class="container my-5">
+    <div class="p-5 bg-light rounded-3 text-center">
+        <h2>@Model.Title</h2>
+        <p class="lead">@Model.Description</p>
+        <a asp.asp-controller="@Model.ControllerName" asp-action="@Model.ActionName" class="btn btn-primary btn-lg">@Model.ButtonText</a>
+    </div>
+</section>
