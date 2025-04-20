@@ -58,7 +58,87 @@ namespace OnlineStore.Controllers
                     }, 
             },
 
-                 SpecialOffer = new SpecialOfferViewModel
+                FeaturedProducts = new List<ProductViewModel>
+                {
+                    new ProductViewModel
+                    {
+                        Id = 1,
+                        Name = "Wireless Head Phones",
+                        Price = 89.99m,
+                        OldPrice = 129.99m,
+                        ImageUrl="https://placehold.co/300x300/f8f9fa/0d6efd?text=Wireless+Headphones",
+                        Category = "Electronics"
+                    },
+                    new ProductViewModel
+                    {
+                        Id = 2,
+                        Name = "Samrt Watches",
+                        Price = 199.99m,
+                        OldPrice = 249.99m,
+                        ImageUrl="https://placehold.co/300x300/f8f9fa/0d6efd?text=Smart+Watch",
+                        Category = "Electronics"
+                    },
+                    new ProductViewModel
+                    {
+                        Id = 3,
+                        Name = "Casual T-Shirt",
+                        Price = 24.99m,
+                        OldPrice = 34.99m,
+                        ImageUrl="https://placehold.co/300x300/f8f9fa/0d6efd?text=Casual+T-Shirt",
+                        Category = "Clothing"
+                    },
+                    new ProductViewModel
+                    {
+                        Id = 4,
+                        Name = "Coffee Maker",
+                        Price = 59.99m,
+                        OldPrice = 79.99m,
+                        ImageUrl="https://placehold.co/300x300/f8f9fa/0d6efd?text=Coffee+Maker",
+                        Category = "Home & Kiitchen"
+                    }
+                },
+
+                NewArrivals = new List<ProductViewModel>
+                {
+                new ProductViewModel
+                    {
+                        Id = 5,
+                        Name = "Premium Headphones",
+                        Price = 79.99m,
+                        OldPrice = 129.99m,
+                        ImageUrl = "https://placehold.co/300x300/f0f0f0/333333?text=Headphones",
+                        Category = "Electronics"
+                    },
+                    new ProductViewModel
+                    {
+                        Id = 6,
+                        Name = "Fitness Smartwatch",
+                        Price = 189.99m,
+                        OldPrice = 249.99m,
+                        ImageUrl = "https://placehold.co/300x300/f0f0f0/333333?text=Smartwatch",
+                        Category = "Electronics"
+                    },
+                    new ProductViewModel
+                    {
+                        Id = 7,
+                        Name = "Designer T-Shirt",
+                        Price = 29.99m,
+                        OldPrice = 39.99m,
+                        ImageUrl = "https://placehold.co/300x300/f0f0f0/333333?text=T-Shirt",
+                        Category = "Clothing"
+                    },
+                    new ProductViewModel
+                    {
+                        Id = 8,
+                        Name = "Smart Coffee Maker",
+                        Price = 69.99m,
+                        OldPrice = 89.99m,
+                        ImageUrl = "https://placehold.co/300x300/f0f0f0/333333?text=Coffee+Maker",
+                        Category = "Home & Kitchen"
+                    }
+                },
+
+                SpecialOffer = new SpecialOfferViewModel
                  {
                      Title = "Special Offers",
                      SubTitle = "Limited Time Offer",
