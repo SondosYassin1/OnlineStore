@@ -1,14 +1,10 @@
-<<<<<<< Updated upstream
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-=======
-﻿@using OnlineStore.Models.Home
+@using OnlineStore.Models.Home
 @model HomeViewModel
 <!-- pass data to partial -->
 <partial name="_CarouselPartialView" model="Model.CarouselItems"/>
 
 <partial name="_SpecialOffersPartial" model="Model.SpecialOffer" />
+
 
     <!-- Updated Featured Products section -->
     <section class="container my-5">
@@ -87,7 +83,7 @@
         </div>
     </div>
     </section>
-     
+
 
     <!-- Updated Testimonials -->
     <section class="container my-5">
@@ -271,6 +267,7 @@
     </div>
     </section>
 
+
     <!-- Call to Action -->
     <section class="container my-5">
     <div class="p-5 bg-light rounded-3 text-center">
@@ -280,9 +277,10 @@
     </div>
     </section>
 
->>>>>>> Stashed changes
+
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+

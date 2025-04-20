@@ -4,5 +4,6 @@
     {
         public IEnumerable<CarouselItemViewModel> CarouselItems { get; set; }
         public SpecialOfferViewModel? SpecialOffer { get; set;}
+
     }
 }

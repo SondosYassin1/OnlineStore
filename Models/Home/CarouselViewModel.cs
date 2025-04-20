@@ -10,9 +10,9 @@
         public bool IsActive { get; set; }
     }
 
-    public class CarouselViewModel
-    {
-        public IEnumerable<CarouselItemViewModel> Items { get; set; }
-    }
-
+        public class CarouselViewModel
+        {
+            public IEnumerable<CarouselItemViewModel> Items { get; set; }
+        }
 }
+
