@@ -1,0 +1,40 @@
+﻿@using OnlineStore.Models.Home
+@model IEnumerable<TestimonialViewModel>
+<!-- Updated Testimonials -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">What Our Customers Say</h2>
+    <div class="row">
+        @foreach (var testimonial in Model)
+        {
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <div class="mb-2">
+                      @for (int i = 1; i <= 5; i++)
+                      {
+                            @if (i <= testimonial.Rating)
+                            {
+                                <i class="fas fa-star text-warning"></i>
+                            }
+                            else if ( Convert.ToDecimal(i - 0.5) == testimonial.Rating)
+                            {
+                                <i class="fas fa-star-half text-warning"></i>
+                            }
+                            else
+                            {
+                                <i class="far fa-star text-warning"></i>
+                            }
+                      }
+                      </div>
+                    <p class="mb-3">"@testimonial.Comment"</p>
+                    <div class="d-flex align-items-center">
+                        <img src="@testimonial.ImageUrl" class="rounded-circle me-3" alt="Customer">
+                        <div>
+                            <h6 class="mb-0">"@testimonial.CustomerName"</h6>
+                            <small class="text-muted">"Verified Customer"</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

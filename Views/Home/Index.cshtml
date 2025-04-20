@@ -4,123 +4,13 @@
 <partial name="_CarouselPartialView" model="Model.CarouselItems"/>
 <partial name="_FeaturedProductsPartial" model="Model.FeaturedProducts" />
 <partial name="_SpecialOffersPartial" model="Model.SpecialOffer" />
-
-    <!-- Updated Testimonials -->
-    <section class="container my-5">
-    <h2 class="text-center mb-4">What Our Customers Say</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="testimonial">
-                <div class="mb-2">
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                </div>
-                <p class="mb-3">"Excellent service and fast delivery. The products are of high quality and exactly as described. Will definitely shop here again!"</p>
-                <div class="d-flex align-items-center">
-                    <img src="https://placehold.co/50x50/6c757d/white?text=JD" class="rounded-circle me-3" alt="Customer">
-                    <div>
-                        <h6 class="mb-0">John Doe</h6>
-                        <small class="text-muted">Verified Customer</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="testimonial">
-                <div class="mb-2">
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star-half-alt text-warning"></i>
-                </div>
-                <p class="mb-3">"I'm impressed with the quality of the products. The customer service was very helpful when I had questions about my order."</p>
-                <div class="d-flex align-items-center">
-                    <img src="https://placehold.co/50x50/6c757d/white?text=JS" class="rounded-circle me-3" alt="Customer">
-                    <div>
-                        <h6 class="mb-0">Jane Smith</h6>
-                        <small class="text-muted">Verified Customer</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="testimonial">
-                <div class="mb-2">
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                </div>
-                <p class="mb-3">"Fast shipping and the product exceeded my expectations. The online shopping experience was seamless from start to finish."</p>
-                <div class="d-flex align-items-center">
-                    <img src="https://placehold.co/50x50/6c757d/white?text=RJ" class="rounded-circle me-3" alt="Customer">
-                    <div>
-                        <h6 class="mb-0">Robert Johnson</h6>
-                        <small class="text-muted">Verified Customer</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
-    <!-- Featured Categories -->
-    <section class="container my-5">
-    <h2 class="text-center mb-4">Shop by Category</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <a href="products.html?category=electronics" class="text-decoration-none text-dark">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <h3>Electronics</h3>
-                    <p>The latest gadgets and tech innovations.</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4">
-            <a href="products.html?category=clothing" class="text-decoration-none text-dark">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <h3>Clothing</h3>
-                    <p>Fashionable apparel for all ages.</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4">
-            <a href="products.html?category=home" class="text-decoration-none text-dark">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Home & Kitchen</h3>
-                    <p>Everything you need for your home.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    </section>
-
+<partial name="_TestimonialsPartial" model="Model.Testimonials"/>
+<partial name="_CategoriesPartial" model="Model.Categorys"/>
 <partial name="_FeaturedProductsPartial" model="Model.NewArrivals" view-data='new ViewDataDictionary(ViewData)
 {{"Title","New Arrivals"}}' />
+<partial name="_CallToActionPartial" model="Model.CallToAction"/>
 
-    <!-- Call to Action -->
-    <section class="container my-5">
-    <div class="p-5 bg-light rounded-3 text-center">
-        <h2>Ready to Start Shopping?</h2>
-        <p class="lead">Explore our wide range of products and find exactly what you're looking for.</p>
-        <a href="products.html" class="btn btn-primary btn-lg">Shop Now</a>
-    </div>
-    </section>
-
+  
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
