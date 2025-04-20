@@ -34,3 +34,41 @@
     right: -8px;
     font-size: 0.7rem;
 }
+
+.category-card {
+    text-align: center;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+    transition: all 0.3s;
+}
+
+    .category-card:hover {
+        background-color: #e9ecef;
+        transform: translateY(-5px);
+    }
+
+.category-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0d6efd;
+}
+
+.testimonial {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.carousel-item {
+    height: 400px;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+}
