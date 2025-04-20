@@ -1,5 +1,5 @@
 ﻿namespace OnlineStore.Models.Home
-{ 
+{
     public class CarouselItemViewModel
     {
         public string Title { get; set; }
@@ -15,3 +15,4 @@
             public IEnumerable<CarouselItemViewModel> Items { get; set; }
         }
 }
+

@@ -1,0 +1,15 @@
+﻿@using OnlineStore.Models.Home
+@model SpecialOfferViewModel
+
+@if (Model != null){
+<section class="container my-5">
+    <div class="card bg-danger text-white rounded">
+        <div class="card-body p-5 text-center">
+            <h1 class="display-1 fw-bold mb-4">@Model.Title</h1>
+            <h2 class="card-title">@Model.SubTitle</h2>
+            <p class="card-text">@Model.Description</p>
+            <a asp-controller="Products" asp-action="Index" asp-route-category="sale" class="btn btn-light mt-2">@Model.ButtonText</a>
+        </div>
+    </div>
+</section>
+}
