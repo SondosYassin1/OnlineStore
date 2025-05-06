@@ -1,0 +1,29 @@
+﻿@using OnlineStore.Models.Products
+@model ProductFilterViewModel;
+
+<div class="filter-section mb-4">
+    <form class="row g-3" asp-controller="Products" asp-action="Index" method="get">
+        <div class="col-md-3">
+            <label asp-for="CategoryId" class="form-label">Category</label>
+            <select asp-for="CategoryId" asp-items="Model.Categories" class="form-select">
+                <option value="">All Categories</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label asp-for="Status" class="form-label">Status</label>
+            <select asp-for="Status" asp-items="Model.Statuses" class="form-select">
+                <option value="">All Status</option>            </select>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="SearchTerm" class="form-label">Search</label>
+            <input asp-for="SearchTerm" type="text" class="form-control" id="searchFilter" placeholder="Search by name or SKU">
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+        </div>
+
+        <!-- Hidden inputs for maintaining pagination state -->
+        <input type="hidden" asp-for="Page" />
+        <input type="hidden" asp-for="PageSize" />
+    </form>
+</div>
