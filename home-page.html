@@ -1,0 +1,601 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyStore - Online Shopping</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .footer {
+            background-color: #f8f9fa;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+
+        .hero-section {
+            padding: 3rem 0;
+            background-color: #f1f8ff;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            transition: transform 0.3s;
+            margin-bottom: 1.5rem;
+        }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            font-size: 0.7rem;
+        }
+
+        .category-card {
+            text-align: center;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #f8f9fa;
+            transition: all 0.3s;
+        }
+
+            .category-card:hover {
+                background-color: #e9ecef;
+                transform: translateY(-5px);
+            }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0d6efd;
+        }
+
+        .testimonial {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .carousel-item {
+            height: 400px;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MyStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="products.html?category=electronics">Electronics</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=clothing">Clothing</a></li>
+                            <li><a class="dropdown-item" href="products.html?category=home">Home & Kitchen</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="products.html">All Products</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Search Form -->
+                <form class="d-flex me-2">
+                    <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+                <!-- User Account and Cart -->
+                <div class="d-flex">
+                    <div class="dropdown me-3">
+                        <a href="#" class="nav-link" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="login.html">Sign In</a></li>
+                            <li><a class="dropdown-item" href="register.html">Register</a></li>
+                        </ul>
+                    </div>
+                    <a href="cart.html" class="nav-link cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge bg-danger rounded-circle cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section with Carousel -->
+        <!-- Updated Carousel with placehold.co images -->
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://placehold.co/1200x400/0d6efd/white?text=Summer+Sale" class="d-block w-100" alt="Summer Sale">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Summer Sale</h2>
+                        <p>Up to 50% off on selected items. Limited time offer!</p>
+                        <a asp-controller="Products" asp-action="Index" asp-route-category="sale" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://placehold.co/1200x400/6610f2/white?text=New+Arrivals" class="d-block w-100" alt="New Arrivals">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>New Arrivals</h2>
+                        <p>Check out our latest products for this season.</p>
+                        <a asp-controller="Products" asp-action="Index" asp-route-category="new" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://placehold.co/1200x400/20c997/white?text=Free+Shipping" class="d-block w-100" alt="Free Shipping">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Free Shipping</h2>
+                        <p>On all orders over $50. Shop now and save!</p>
+                        <a asp-controller="Products" asp-action="Index" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Updated Featured Products section -->
+        <section class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Featured Products</h2>
+                <a asp-controller="Products" asp-action="Index" class="btn btn-outline-primary">View All</a>
+            </div>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://placehold.co/300x300/f8f9fa/0d6efd?text=Wireless+Headphones" class="card-img-top" alt="Wireless Headphones">
+                        <div class="card-body">
+                            <h5 class="card-title">Wireless Headphones</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-danger fw-bold">$89.99</span>
+                                <span class="text-decoration-line-through text-muted">$129.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="1" class="btn btn-sm btn-outline-primary">View Details</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://placehold.co/300x300/f8f9fa/0d6efd?text=Smart+Watch" class="card-img-top" alt="Smart Watch">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Watch</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-danger fw-bold">$199.99</span>
+                                <span class="text-decoration-line-through text-muted">$249.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="2" class="btn btn-sm btn-outline-primary">View Details</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://placehold.co/300x300/f8f9fa/0d6efd?text=Casual+T-Shirt" class="card-img-top" alt="Casual T-Shirt">
+                        <div class="card-body">
+                            <h5 class="card-title">Casual T-Shirt</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-danger fw-bold">$24.99</span>
+                                <span class="text-decoration-line-through text-muted">$34.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="3" class="btn btn-sm btn-outline-primary">View Details</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://placehold.co/300x300/f8f9fa/0d6efd?text=Coffee+Maker" class="card-img-top" alt="Coffee Maker">
+                        <div class="card-body">
+                            <h5 class="card-title">Coffee Maker</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-danger fw-bold">$59.99</span>
+                                <span class="text-decoration-line-through text-muted">$79.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="4" class="btn btn-sm btn-outline-primary">View Details</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updated Special Offers Banner -->
+        <section class="container my-5">
+            <div class="card bg-danger text-white rounded">
+                <div class="card-body p-5 text-center">
+                    <h1 class="display-1 fw-bold mb-4">Special Offers</h1>
+                    <h2 class="card-title">Limited Time Offer</h2>
+                    <p class="card-text">Get up to 70% off on selected items. Hurry, limited stock available!</p>
+                    <a asp-controller="Products" asp-action="Index" asp-route-category="sale" class="btn btn-light mt-2">Shop the Sale</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updated Testimonials -->
+        <section class="container my-5">
+            <h2 class="text-center mb-4">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <div class="mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Excellent service and fast delivery. The products are of high quality and exactly as described. Will definitely shop here again!"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://placehold.co/50x50/6c757d/white?text=JD" class="rounded-circle me-3" alt="Customer">
+                            <div>
+                                <h6 class="mb-0">John Doe</h6>
+                                <small class="text-muted">Verified Customer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <div class="mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                        <p class="mb-3">"I'm impressed with the quality of the products. The customer service was very helpful when I had questions about my order."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://placehold.co/50x50/6c757d/white?text=JS" class="rounded-circle me-3" alt="Customer">
+                            <div>
+                                <h6 class="mb-0">Jane Smith</h6>
+                                <small class="text-muted">Verified Customer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <div class="mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Fast shipping and the product exceeded my expectations. The online shopping experience was seamless from start to finish."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://placehold.co/50x50/6c757d/white?text=RJ" class="rounded-circle me-3" alt="Customer">
+                            <div>
+                                <h6 class="mb-0">Robert Johnson</h6>
+                                <small class="text-muted">Verified Customer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section class="container my-5">
+            <h2 class="text-center mb-4">Shop by Category</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="products.html?category=electronics" class="text-decoration-none text-dark">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h3>Electronics</h3>
+                            <p>The latest gadgets and tech innovations.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="products.html?category=clothing" class="text-decoration-none text-dark">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <h3>Clothing</h3>
+                            <p>Fashionable apparel for all ages.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="products.html?category=home" class="text-decoration-none text-dark">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3>Home & Kitchen</h3>
+                            <p>Everything you need for your home.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updated Featured Products -->
+        <section class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Featured Products</h2>
+                <a asp-controller="Products" asp-action="Index" class="btn btn-outline-primary">View All</a>
+            </div>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://placehold.co/300x300/f0f0f0/333333?text=Headphones" class="card-img-top" alt="Wireless Headphones">
+                        <div class="card-body">
+                            <h5 class="card-title">Premium Headphones</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-danger fw-bold">$79.99</span>
+                                <span class="text-decoration-line-through text-muted">$129.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="1" class="btn btn-sm btn-outline-primary">View Details</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://placehold.co/300x300/f0f0f0/333333?text=Smartwatch" class="card-img-top" alt="Smart Watch">
+                        <div class="card-body">
+                            <h5 class="card-title">Fitness Smartwatch</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-danger fw-bold">$189.99</span>
+                                <span class="text-decoration-line-through text-muted">$249.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="2" class="btn btn-sm btn-outline-primary">View Details</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://placehold.co/300x300/f0f0f0/333333?text=T-Shirt" class="card-img-top" alt="Designer T-Shirt">
+                        <div class="card-body">
+                            <h5 class="card-title">Designer T-Shirt</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-danger fw-bold">$29.99</span>
+                                <span class="text-decoration-line-through text-muted">$39.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="3" class="btn btn-sm btn-outline-primary">View Details</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="col-md-3">
+                    <div class="card product-card">
+                        <img src="https://placehold.co/300x300/f0f0f0/333333?text=Coffee+Maker" class="card-img-top" alt="Coffee Maker">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Coffee Maker</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-danger fw-bold">$69.99</span>
+                                <span class="text-decoration-line-through text-muted">$89.99</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="4" class="btn btn-sm btn-outline-primary">View Details</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers Banner -->
+        <section class="container my-5">
+            <div class="card bg-danger text-white rounded">
+                <div class="card-body p-5 text-center">
+                    <h1 class="display-1 fw-bold mb-4">Special Offers</h1>
+                    <h2 class="card-title">Limited Time Offer</h2>
+                    <p class="card-text">Get up to 70% off on selected items. Hurry, limited stock available!</p>
+                    <a asp-controller="Products" asp-action="Index" asp-route-category="sale" class="btn btn-light mt-2">Shop the Sale</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="container my-5">
+            <h2 class="text-center mb-4">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <div class="mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Excellent service and fast delivery. The products are of high quality and exactly as described. Will definitely shop here again!"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://via.placeholder.com/50x50" class="rounded-circle me-3" alt="Customer">
+                            <div>
+                                <h6 class="mb-0">John Doe</h6>
+                                <small class="text-muted">Verified Customer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <div class="mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                        <p class="mb-3">"I'm impressed with the quality of the products. The customer service was very helpful when I had questions about my order."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://via.placeholder.com/50x50" class="rounded-circle me-3" alt="Customer">
+                            <div>
+                                <h6 class="mb-0">Jane Smith</h6>
+                                <small class="text-muted">Verified Customer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <div class="mb-2">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Fast shipping and the product exceeded my expectations. The online shopping experience was seamless from start to finish."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://via.placeholder.com/50x50" class="rounded-circle me-3" alt="Customer">
+                            <div>
+                                <h6 class="mb-0">Robert Johnson</h6>
+                                <small class="text-muted">Verified Customer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="container my-5">
+            <div class="p-5 bg-light rounded-3 text-center">
+                <h2>Ready to Start Shopping?</h2>
+                <p class="lead">Explore our wide range of products and find exactly what you're looking for.</p>
+                <a href="products.html" class="btn btn-primary btn-lg">Shop Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>MyStore</h5>
+                    <p>Your one-stop shop for the best products at great prices.</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Shop</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a href="products.html?category=new" class="nav-link p-0 text-muted">New Arrivals</a></li>
+                        <li class="nav-item"><a href="products.html?category=bestsellers" class="nav-link p-0 text-muted">Best Sellers</a></li>
+                        <li class="nav-item"><a href="products.html?category=deals" class="nav-link p-0 text-muted">Deals</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Support</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a href="contact.html" class="nav-link p-0 text-muted">Contact Us</a></li>
+                        <li class="nav-item"><a href="faq.html" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item"><a href="shipping.html" class="nav-link p-0 text-muted">Shipping</a></li>
+                        <li class="nav-item"><a href="returns.html" class="nav-link p-0 text-muted">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Stay Updated</h5>
+                    <p>Subscribe to our newsletter for the latest products and deals.</p>
+                    <div class="d-flex w-100 gap-2">
+                        <input id="newsletter" type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>&copy; 2023 MyStore, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
