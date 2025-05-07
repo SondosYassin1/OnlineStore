@@ -1,6 +1,5 @@
 ﻿@using OnlineStore.Models.Products
 @model PaginationInfo;
-
 @{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.HasNextPage ? "disabled" : "";
@@ -11,57 +10,54 @@
     <ul class="pagination justify-content-center">
 
         <li class="page-item @prevDisabled">
-            <a class="page-link" asp-controller="Products" asp-action="Index" 
-            asp-rout-page="@(Model.CurrentPage - 1)" 
-            asp-rout-CategoryId="@Context.Request.Query["categoryId"]"
-            asp-rout-Status="@Context.Request.Query["status"]"
-            asp-rout-SearchTerm="@Context.Request.Query["searchTerm"]"
-            asp-rout-PageSize="@Context.Request.Query["pageSize"]"
+            <a class="page-link" asp-controller="Products" asp-action="index"
+            asp-route-page ="@(Model.CurrentPage - 1)"
+            asp-route-categoryId="@Context.Request.Query["categoryId"]"
+            asp-route-status="@Context.Request.Query["status"]"
+            asp-route-searchTerm="@Context.Request.Query["searchTerm"]"
+            asp-route-pageSize="@Context.Request.Query["pageSize"]"
             aria-label="Previous" tabindex="@prevTabIndex">
-                @* for accessability  @(Model.HasPreviousPage ? "" : "tabindex\"-1\"") *@
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
+
         @{
             const int totalDisplayPages = 5;
             var startPage = Math.Max(1, Model.CurrentPage - 2);
             var endPage = Math.Min(Model.TotalPages, startPage + totalDisplayPages - 1);
             // Ensure to display 5 pages if possible
-            if(endPage - startPage < totalDisplayPages && Model.TotalPages >= totalDisplayPages)
+            if (endPage - startPage < totalDisplayPages && Model.TotalPages>= totalDisplayPages)
             {
                 startPage = Math.Max(1, endPage - totalDisplayPages + 1);
             }
+
         }
 
         @for(int i = startPage; i <= endPage; i++)
         {
-            <li class="page-item @nextDisabled">
-                <a class="page-link" asp-controller="Products" asp-action="Index"
-                   asp-rout-page="@i"
-                   asp-rout-CategoryId="@Context.Request.Query["categoryId"]"
-                   asp-rout-Status="@Context.Request.Query["status"]"
-                   asp-rout-SearchTerm="@Context.Request.Query["searchTerm"]"
-                   asp-rout-PageSize="@Context.Request.Query["pageSize"]"
-                   aria-label="Next" tabindex="@nextTabIndex">
+            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                <a class="page-link" asp-controller="Products" asp-action="index"
+                   asp-route-page="@i"
+                   asp-route-categoryId="@Context.Request.Query["categoryId"]"
+                   asp-route-status="@Context.Request.Query["status"]"
+                   asp-route-searchTerm="@Context.Request.Query["searchTerm"]"
+                   asp-route-pageSize="@Context.Request.Query["pageSize"]"
+                   aria-label="Previous">
                    @i
                 </a>
             </li>
         }
 
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-
         <li class="page-item @nextDisabled">
-            <a class="page-link" asp-controller="Products" asp-action="Index"
-               asp-rout-page="@(Model.CurrentPage + 1)"
-               asp-rout-CategoryId="@Context.Request.Query["categoryId"]"
-               asp-rout-Status="@Context.Request.Query["status"]"
-               asp-rout-SearchTerm="@Context.Request.Query["searchTerm"]"
-               asp-rout-PageSize="@Context.Request.Query["pageSize"]"
-               aria-label="Previous">
+            <a class="page-link" asp-controller="Products" asp-action="index"
+               asp-route-page="@(Model.CurrentPage + 1)"
+               asp-route-categoryId="@Context.Request.Query["categoryId"]"
+               asp-route-status="@Context.Request.Query["status"]"
+               asp-route-searchTerm="@Context.Request.Query["searchTerm"]"
+               asp-route-pageSize="@Context.Request.Query["pageSize"]"
+               aria-label="Next" tabindex="@nextTabIndex">
                 @* for accessability  @(Model.HasPreviousPage ? "" : "tabindex\"-1\"") *@
-                <span aria-hidden="true">&laquo;</span>
+                <span aria-hidden="true">&raquo;</span>
             </a>
         </li>
     </ul>

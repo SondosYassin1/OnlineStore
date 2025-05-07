@@ -13,7 +13,7 @@
         @if(Model.OldPrice.HasValue)
         {
             <small class="text-decoration-line-through text-muted">@Model.OldPrice.Value.ToString("0.000")</small>
-        })
+        }
     </td>
     <td>
         @if (Model.IsActive)
@@ -23,7 +23,7 @@
         else
         {
             <span class="badge bg-secondary status-badge">Inactive</span>
-        })
+        }
 
         @if(Model.IsFeatured)
         {
@@ -33,7 +33,7 @@
         @if (Model.IsOnSale)
         {
             <span class="badge bg-danger status-badge">@Model.IsOnSale</span>
-        })
+        }
         
     </td>
     <td class="action-buttons">

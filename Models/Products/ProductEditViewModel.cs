@@ -93,7 +93,7 @@ namespace OnlineStore.Models.Products
         public List<string> Features { get; set; } = new List<string>();
 
         // For dropdowns 
-        public IEnumerable<SelectListItem> Category { get; set; } = new List<SelectListItem>();
+        public IEnumerable<SelectListItem> Categories { get; set; } = new List<SelectListItem>();
 
     }
 }
