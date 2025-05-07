@@ -8,7 +8,7 @@ namespace OnlineStore.Models.Products
         public string CategoryId { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
         public int Page { get; set; } = 1;
-        public int PageSize { get; set; } = 10;
+        public int PageSize { get; set; } = 3;
 
         // For dropdowns
         public IEnumerable<SelectListItem> Categories { get; set; } = new List<SelectListItem>();
