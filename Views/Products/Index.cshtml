@@ -1,14 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+@using OnlineStore.Models.Products
+@model ProductListViewModel
+
 @{
-<<<<<<< Updated upstream
-}
-=======
     ViewData["Title"] = "Product Management";
 }
 
 <main class="container my-4">
+
+
 <!-- Header section -->
 <partial name="_ProductListHeaderPartial" model="Model"/>
 
@@ -55,6 +54,8 @@
     <partial name="_PaganationPartial" model="Model.Pagination" />
 }
 </main>
+
+
 <!-- Delete confirmation -->
 <partial name="_DeleteConfirmationPartial" />
 
@@ -75,5 +76,7 @@
                 // in real life this is handled by AJAX request
             }
     </script>
+
 }
->>>>>>> Stashed changes
+}
+
