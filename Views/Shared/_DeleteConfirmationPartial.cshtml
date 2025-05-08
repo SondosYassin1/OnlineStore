@@ -14,7 +14,7 @@
                 
                 <form id="deleteProductForm" method="post" asp-controller="Products" asp-action="Delete">
                     @Html.AntiForgeryToken()
-                    <input type="hidden" name="id" id="ProductIdToDelete" value="" />
+                    <input type="hidden" name="id" id="productIdToDelete" value="" />
                     <button type="submit" class="btn btn-danger" id="confirmDelete">Delete</button>
                 </form>
             </div>
@@ -22,17 +22,4 @@
     </div>
 </div>
 
-@section Scripts {
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const deleteModal = document.getElementById('deleteModal');
-            if (deleteModal) {
-                deleteModal.addEventListener('show.bs.modal', function (event) {
-                    const itemDeleteButton = event.relatedTarget;
-                    const productId = itemDeleteButton.getAttribute('data-id');
-                    document.getElementById('productIdToDelete').value = productId;
-                });
-            }
-        });
-    </script>
-}
+

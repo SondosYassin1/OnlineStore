@@ -105,6 +105,14 @@
 
     <!-- Main Content Area - This would be replaced by page-specific content -->
     <main>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissable fade show" role="aler">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
         <!-- Page content would go here -->
         @RenderBody()
     </main>
