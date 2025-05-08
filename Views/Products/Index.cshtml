@@ -6,8 +6,13 @@
 }
 
 <main class="container my-4">
+<<<<<<< Updated upstream
     <!-- Header section -->
     <partial name="_ProductListHeaderPartial" model="Model" />
+=======
+<!-- Header section -->
+<partial name="_ProductListHeaderPartial" model="Model"/>
+>>>>>>> Stashed changes
 
     <!-- Filter Section -->
     <partial name="_ProductFilterPartial" model="Model.Filter" />
@@ -52,7 +57,17 @@
     }
 </main>
 
+<<<<<<< Updated upstream
 
+=======
+<!-- Pagination -->
+@if (Model.Pagination.TotalItems > 0)
+{
+    <partial name="_PaganationPartial" model="Model.Pagination" />
+}
+</main>
+<!-- Delete confirmation -->
+>>>>>>> Stashed changes
 <partial name="_DeleteConfirmationPartial" />
 
 @section Scripts {
