@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Product Management";
 }
+<main class="container my-4">
 <!-- Header section -->
 <partial name="_ProductListHeaderPartial" model="Model"/>
 
@@ -46,8 +47,9 @@
 <!-- Pagination -->
 @if (Model.Pagination.TotalItems > 0)
 {
-    <partial name="_PaganationPartial" />
+    <partial name="_PaganationPartial" model="Model.Pagination"/>
 }
+</main>
 <!-- Delete confirmation -->
 <partial name="_DeleteConfirmationPartial" />
 
