@@ -53,7 +53,10 @@ namespace OnlineStore.Controllers
             //await signInManager.SignOutAsync();
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             var homeViewModel = new HomeViewModel
@@ -102,9 +105,12 @@ namespace OnlineStore.Controllers
                         ButtonText = "Shop Now",
                         IsActive = false
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     }
                 };
 =======
+=======
+>>>>>>> Stashed changes
                     }, 
             },
 
@@ -117,6 +123,13 @@ namespace OnlineStore.Controllers
                      Category = "Sale"            
                  }
             };           
+<<<<<<< Updated upstream
+=======
+        
+            return View(homeViewModel);
+        }
+                       
+>>>>>>> Stashed changes
         
             return View(homeViewModel);
 >>>>>>> Stashed changes
