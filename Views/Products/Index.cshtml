@@ -4,23 +4,8 @@
 @{
     ViewData["Title"] = "Product Management";
 }
-
-<main class="container my-4">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <!-- Header section -->
-    <partial name="_ProductListHeaderPartial" model="Model" />
-=======
-=======
->>>>>>> Stashed changes
 <!-- Header section -->
 <partial name="_ProductListHeaderPartial" model="Model"/>
->>>>>>> Stashed changes
-=======
-    <!-- Header section -->
-    <partial name="_ProductListHeaderPartial" model="Model" />
->>>>>>> Stashed changes
 
     <!-- Filter Section -->
     <partial name="_ProductFilterPartial" model="Model.Filter" />
@@ -58,30 +43,12 @@
         </table>
     </div>
 
-    <!-- Pagination -->
-    @if (Model.Pagination.TotalItems > 0)
-    {
-        <partial name="_PaganationPartial" model="Model.Pagination" />
-    }
-<<<<<<< Updated upstream
-</main>
-
-<<<<<<< Updated upstream
-
-=======
 <!-- Pagination -->
 @if (Model.Pagination.TotalItems > 0)
 {
-    <partial name="_PaganationPartial" model="Model.Pagination" />
+    <partial name="_PaganationPartial" />
 }
-</main>
 <!-- Delete confirmation -->
->>>>>>> Stashed changes
-=======
-</main>
-
-
->>>>>>> Stashed changes
 <partial name="_DeleteConfirmationPartial" />
 
 @section Scripts {
