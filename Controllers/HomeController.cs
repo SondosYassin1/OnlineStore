@@ -11,18 +11,31 @@ namespace OnlineStore.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
+<<<<<<< Updated upstream
         public HomeController(ILogger<HomeController> logger
             , UserManager<ApplicationUser> userManager
             , SignInManager<ApplicationUser> signInManager)
         {
+=======
+
+        public HomeController(
+            ILogger<HomeController> logger,
+            SignInManager<ApplicationUser> signInManager,
+            UserManager<ApplicationUser> userManager)
+        {   
+>>>>>>> Stashed changes
             _logger = logger;
             this.signInManager = signInManager;
             this.userManager = userManager;
         }
 
+<<<<<<< Updated upstream
         public async Task<IActionResult> Index()
-        {
+=======
 
+        public IActionResult Index()
+>>>>>>> Stashed changes
+        {
             // Tested the partial view
 
             //tested Signin
@@ -127,6 +140,7 @@ namespace OnlineStore.Controllers
 =======
         
             return View(homeViewModel);
+<<<<<<< Updated upstream
         }
                        
 >>>>>>> Stashed changes
@@ -301,6 +315,8 @@ namespace OnlineStore.Controllers
                 ControllerName = "Products",
                 ActionName = "Index"
             };
+=======
+>>>>>>> Stashed changes
         }
 
         public IActionResult Privacy()
