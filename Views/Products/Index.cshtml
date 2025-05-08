@@ -1,20 +1,13 @@
-<<<<<<< HEAD
-﻿@using OnlineStore.Models.Products
-@model ProductListViewModel;
-=======
 @using OnlineStore.Models.Products
-@model ProductListViewModel
->>>>>>> 0836a9588f1436d78a61dec3c324cf3b9a4dd763
+@model ProductListViewModel;
 
 @{
     ViewData["Title"] = "Product Management";
 }
 
 <main class="container my-4">
-
-
-<!-- Header section -->
-<partial name="_ProductListHeaderPartial" model="Model"/>
+    <!-- Header section -->
+    <partial name="_ProductListHeaderPartial" model="Model" />
 
     <!-- Filter Section -->
     <partial name="_ProductFilterPartial" model="Model.Filter" />
@@ -60,7 +53,6 @@
 </main>
 
 
-<!-- Delete confirmation -->
 <partial name="_DeleteConfirmationPartial" />
 
 @section Scripts {
@@ -94,5 +86,3 @@
     </script>
 
 }
-}
-
