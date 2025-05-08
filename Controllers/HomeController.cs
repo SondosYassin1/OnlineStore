@@ -11,30 +11,20 @@ namespace OnlineStore.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
-<<<<<<< Updated upstream
-        public HomeController(ILogger<HomeController> logger
-            , UserManager<ApplicationUser> userManager
-            , SignInManager<ApplicationUser> signInManager)
-        {
-=======
 
+       
         public HomeController(
             ILogger<HomeController> logger,
             SignInManager<ApplicationUser> signInManager,
             UserManager<ApplicationUser> userManager)
         {   
->>>>>>> Stashed changes
+
             _logger = logger;
             this.signInManager = signInManager;
             this.userManager = userManager;
         }
 
-<<<<<<< Updated upstream
         public async Task<IActionResult> Index()
-=======
-
-        public IActionResult Index()
->>>>>>> Stashed changes
         {
             // Tested the partial view
 
@@ -65,13 +55,7 @@ namespace OnlineStore.Controllers
             //tested Signout 
             //await signInManager.SignOutAsync();
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             var homeViewModel = new HomeViewModel
             {
                 CarouselItems = GetCarouselItems(),
@@ -81,10 +65,8 @@ namespace OnlineStore.Controllers
                 Categorys = GetCategorys(),
                 Testimonials = GetTestimonials(),
                 CallToAction = GetCallToAction()
-            };           
-        
-            return View(homeViewModel);
-
+            };      
+             return View(homeViewModel);
         }
          
         private List<CarouselItemViewModel> GetCarouselItems()
@@ -117,38 +99,10 @@ namespace OnlineStore.Controllers
                         LinkUrl = "",  // No specific category
                         ButtonText = "Shop Now",
                         IsActive = false
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                     }
-                };
-=======
-=======
->>>>>>> Stashed changes
-                    }, 
-            },
-
-                 SpecialOffer = new SpecialOfferViewModel
-                 {
-                     Title = "Special Offers",
-                     SubTitle = "Limited Time Offer",
-                     Description = "Get up to 70% of on selected items, limated stock available!",
-                     ButtonText = "Shop the Sale",
-                     Category = "Sale"            
-                 }
-            };           
-<<<<<<< Updated upstream
-=======
-        
-            return View(homeViewModel);
-<<<<<<< Updated upstream
+                };                    
         }
-                       
->>>>>>> Stashed changes
-        
-            return View(homeViewModel);
->>>>>>> Stashed changes
-        }
-        
+            
         private List<ProductViewModel> GetFeaturedProducts()
         {
             return new List<ProductViewModel>
@@ -315,8 +269,6 @@ namespace OnlineStore.Controllers
                 ControllerName = "Products",
                 ActionName = "Index"
             };
-=======
->>>>>>> Stashed changes
         }
 
         public IActionResult Privacy()

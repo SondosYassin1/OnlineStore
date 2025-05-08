@@ -22,15 +22,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //builder.Services.AddDbContext<ApplicationDbContext>(
 //options => options.UseInMemoryDatabase("TemproraryDb"));
 
-<<<<<<< Updated upstream
 //// The data of the user stor it in the ApplicationDbContext
 //builder.Services.AddDefaultIdentity<ApplicationUser>()
 //           .AddEntityFrameworkStores<ApplicationDbContext>();
-=======
+
 ////The data of the user stor it in the ApplicationDbContext
 //builder.Services.AddDefaultIdentity<IdentityUser>()
 //    .AddEntityFrameworkStores<ApplicationDbContext>();
->>>>>>> Stashed changes
+
 
 
 
