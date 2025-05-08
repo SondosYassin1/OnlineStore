@@ -52,7 +52,10 @@ namespace OnlineStore.Controllers
             //tested Signout 
             //await signInManager.SignOutAsync();
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             var homeViewModel = new HomeViewModel
             {
                 CarouselItems = GetCarouselItems(),
@@ -98,8 +101,25 @@ namespace OnlineStore.Controllers
                         LinkUrl = "",  // No specific category
                         ButtonText = "Shop Now",
                         IsActive = false
+<<<<<<< Updated upstream
                     }
                 };
+=======
+                    }, 
+            },
+
+                 SpecialOffer = new SpecialOfferViewModel
+                 {
+                     Title = "Special Offers",
+                     SubTitle = "Limited Time Offer",
+                     Description = "Get up to 70% of on selected items, limated stock available!",
+                     ButtonText = "Shop the Sale",
+                     Category = "Sale"            
+                 }
+            };           
+        
+            return View(homeViewModel);
+>>>>>>> Stashed changes
         }
         
         private List<ProductViewModel> GetFeaturedProducts()
