@@ -56,31 +56,64 @@
 @section Scripts {
     <script src="~/js/products.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize tooltips
+         function toggleStatus(id, status) {
+            // onpageshow loading status
+            const button = event.currentTarget;
+            const originalHtml = button.innerHTML;
+            button.disabled = true;
+            button.innerHTML= '<span class="spinner-border spinner-border-sm" role="status"></span>';
+            // making Ajax request
+            fetch(`/Products/ToggleStatus?id=${id}&status=${status}`,{
+                method: 'POST',
+                headers:{
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.text())
+            .then(html => {
+                const row = button.closest('tr');
+                row.outerHTML = html;
+
+                initToolTips();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while toggling the status. Please try again.');
+                button.disabled = false;
+                button.innerHtml = originalHtml;
+            })
+        }
+
+        function initToolTips(){
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 return new bootstrap.Tooltip(tooltipTriggerEl)
             });
+        }
+
+
+           document.addEventListener('DOMContentLoaded', function() {
+            // Initialize tooltips
+            initToolTips();
 
             const deleteModal = document.getElementById('deleteModal');
-            console.log("****", deleteModal);
+          //  console.log("****", deleteModal);
             if (deleteModal) {
                 deleteModal.addEventListener('show.bs.modal', function (event) {
                     const itemDeleteButton = event.relatedTarget;
-                    console.log("****", itemDeleteButton);
+                   // console.log("****", itemDeleteButton);
                     const productId = itemDeleteButton.getAttribute('data-id');
-                    console.log("****", productId);
+                  //  console.log("****", productId);
                     document.getElementById('productIdToDelete').value = productId;
                 });
             };
         });
 
-        // Function to handle status toggles
-        function toggleStatus(productId, statusStype) {
-            console.log('Togling ....');
-            // in real life this is handled by AJAZ request
-        }
+    //     // Function to handle status toggles
+    //     function toggleStatus(productId, statusStype) {
+    //         console.log('Togling ....');
+    //         // in real life this is handled by AJAZ request
+    //     }
     </script>
 
 }
