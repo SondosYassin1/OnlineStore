@@ -8,15 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{ //It tells EF Core how to connect to the database and which database provider to use.
+builder.Services.AddDbContext<ApplicationDbContext>(
+    options =>
+ //It tells EF Core how to connect to the database and which database provider to use.
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"));
-
-
-
- 
-});
+        builder.Configuration.GetConnectionString("DefaultConnection")) 
+);
 
 //// means the place that it's stor data in memory (make storege)
 //builder.Services.AddDbContext<ApplicationDbContext>(
