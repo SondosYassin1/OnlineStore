@@ -75,26 +75,42 @@ app.MapControllerRoute(
     .WithStaticAssets();
 
 
-using (var scop = app.Services.CreateScope())
+//using (var scop = app.Services.CreateScope())
+//{
+//    var services = scop.ServiceProvider;
+//    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+//    try
+//    {
+//       var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+//       var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+
+//        // seed roles
+//        await InitialSetup.SeedRolesAsync(roleManager);
+
+//        // seed admin user 
+//        await InitialSetup.SeedAdminUserAsync(userManager);
+//    }
+//    catch(Exception ex)
+//    {
+//        var logger = loggerFactory.CreateLogger<Program>();
+//        logger.LogError(ex, "An error occure while seeding the database.");
+//    }
+//}
+
+// seed data
+using (var scope = app.Services.CreateScope())
 {
-    var services = scop.ServiceProvider;
-    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+    var services = scope.ServiceProvider;
+    var env = services.GetRequiredService<IHostEnvironment>();
+
     try
     {
-       var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-       var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-
-        // seed roles
-        await InitialSetup.SeedRolesAsync(roleManager);
-
-        // seed admin user 
-        await InitialSetup.SeedAdminUserAsync(userManager);
+        await DbInitializer.InizializeAsync(services, env);
     }
-    catch(Exception ex)
+    catch (Exception ex)
     {
-        var logger = loggerFactory.CreateLogger<Program>();
-        logger.LogError(ex, "An error occure while seeding the database.");
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred while seeding the database.");
     }
 }
-
 app.Run();
